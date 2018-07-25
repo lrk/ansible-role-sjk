@@ -1,4 +1,4 @@
-Ansible Role: Swiss Java Knife (SJK) ([lrk.sjk](https://galaxy.ansible.com/lrk/sjk/))
+Ansible Role: Swiss Java Knife (SJK) ([lrk.ansible-role-sjk](https://galaxy.ansible.com/lrk/sjk/))
 =========
 [![Build Status](https://travis-ci.org/lrk/ansible-role-sjk.svg?branch=master)](https://travis-ci.org/lrk/ansible-role-sjk)
 
