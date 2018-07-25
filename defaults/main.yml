@@ -1,0 +1,28 @@
+---
+# defaults file for ansible-role-sjk/
+
+# SJK binary version.
+# LATEST or specific version number.
+# Default value: LATEST
+# See https://mvnrepository.com/artifact/org.gridkit.jvmtool/sjk for available versions
+sjk_version: LATEST
+
+# true: use the full sjk binary (with mxdump)
+# false: use lighter sjk binary (without mxdump)
+# Default value: false
+sjk_use_sjkplus: false
+
+# SJK Binary destination path
+sjk_dest: '/opt/sjk/sjk-{{ sjk_version | lower }}'
+
+# Configure SJK binary owner
+# Default value: empty
+sjk_owner:
+
+# Configure SJK binary owner group
+# Default value: empty
+sjk_group:
+
+# Configure CHMOD for SJK binary
+# Default value: 440
+sjk_chmod: 440

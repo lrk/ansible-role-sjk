@@ -1,0 +1,24 @@
+galaxy_info:
+  author: lrk
+  description: "An Ansible Role that install Swiss Java Knife (SJK)."
+  license: "Apache License Version 2.0"
+
+  min_ansible_version: 2.2
+
+  platforms:
+  - name: EL
+    versions:
+    - 7
+
+  galaxy_tags:
+    - 'centos'
+    - 'development'
+    - 'monitoring'
+    - 'sjk'
+    - 'swiss java knife'
+    - 'jvm-tools'
+    - 'jvm'
+    - 'java'
+    - 'jdk'
+
+dependencies: []

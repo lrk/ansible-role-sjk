@@ -1,0 +1,27 @@
+---
+# tasks file for ansible-role-sjk/
+
+- name: "Ensure SJK dest path exists"
+  file:
+    path: "{{ sjk_dest }}"
+    state: directory
+    owner: "{{ sjk_owner }}"
+    group: "{{ sjk_group }}"
+    mode: "u=rwX,g=rX,o=rX"
+
+- name: "Ensure SJK binary exists"
+  stat:
+    path: "{{ sjk_dest }}/{{ __sjk_binary_name }}"
+  register: sjk_binary_stat
+
+- block:
+  - name: "Download SJK binary"
+    get_url:
+      url: "{{ __sjk_download_url }}"
+      dest: "{{ sjk_dest }}/{{ __sjk_binary_name }}"
+    retries: 5
+    delay: 10
+
+  when: not sjk_binary_stat.stat.exists
+
+- name: "Ensure SJK binary owner"
