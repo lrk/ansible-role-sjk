@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    yum install -y epel-release python curl ansible
+    yum install -y epel-release python curl ansible java-1.8.0-openjdk-devel
     curl https://bootstrap.pypa.io/get-pip.py | sudo python
     pip install -U pip
   SHELL

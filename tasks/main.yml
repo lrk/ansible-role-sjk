@@ -1,4 +1,4 @@
 ---
 # tasks file for ansible-role-sjk/
 
-- include: setup_sjk.yml
+- include_tasks: setup_sjk.yml
