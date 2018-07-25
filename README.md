@@ -45,7 +45,7 @@ Available variables along with default values are listed below (see `defaults/ma
 
     # Configure CHMOD for SJK binary
     # Default value: 440
-    sjk_chmod: 440
+    sjk_chmod: "u=r,g=r,o=r"
 
 ```
 
