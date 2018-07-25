@@ -24,4 +24,9 @@
 
   when: not sjk_binary_stat.stat.exists
 
-- name: "Ensure SJK binary owner"
+- name: "Ensure SJK binary ownership"
+  file:
+    path: "{{ sjk_dest }}/{{ __sjk_binary_name }}"
+    owner: "{{ sjk_owner }}"
+    group: "{{ sjk_group }}"
+    mode: "{{ sjk_chmod }}"
