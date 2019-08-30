@@ -16,11 +16,16 @@
 
 - block:
   - name: "Download SJK binary"
-    get_url:
-      url: "{{ __sjk_download_url }}"
-      dest: "{{ sjk_dest }}/{{ __sjk_binary_name }}"
-    retries: 5
-    delay: 10
+    maven_artifact:
+        group_id: "{{ __sjk_group_id }}"
+        artifact_id: "{{ __sjk_artifact_id }}"
+        version: "{{ sjk_version }}"
+        repository_url: "{{ sjk_repo_url | default(omit) }}"
+        state: present
+        username: "{{ sjk_repo_username | default(omit) }}"
+        password: "{{ sjk_repo_password | default(omit) }}"
+        timeout: "{{ __sjk_maven_artifact_timeout }}"
+        dest: "{{ sjk_dest }}"
 
   when: not sjk_binary_stat.stat.exists
 
