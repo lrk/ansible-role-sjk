@@ -14,19 +14,17 @@
     path: "{{ sjk_dest }}/{{ __sjk_binary_name }}"
   register: sjk_binary_stat
 
-- block:
-  - name: "Download SJK binary"
-    maven_artifact:
-        group_id: "{{ __sjk_group_id }}"
-        artifact_id: "{{ __sjk_artifact_id }}"
-        version: "{{ sjk_version }}"
-        repository_url: "{{ sjk_repo_url | default(omit) }}"
-        state: present
-        username: "{{ sjk_repo_username | default(omit) }}"
-        password: "{{ sjk_repo_password | default(omit) }}"
-        timeout: "{{ __sjk_maven_artifact_timeout }}"
-        dest: "{{ sjk_dest }}"
-
+- name: "Download SJK binary"
+  maven_artifact:
+    group_id: "{{ __sjk_group_id }}"
+    artifact_id: "{{ __sjk_artifact_id }}"
+    version: "{{ sjk_version }}"
+    repository_url: "{{ sjk_repo_url | default(omit) }}"
+    state: present
+    username: "{{ sjk_repo_username | default(omit) }}"
+    password: "{{ sjk_repo_password | default(omit) }}"
+    timeout: "{{ __sjk_maven_artifact_timeout }}"
+    dest: "{{ sjk_dest }}"
   when: not sjk_binary_stat.stat.exists
 
 - name: "Ensure SJK binary ownership"
