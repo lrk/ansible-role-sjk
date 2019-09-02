@@ -1,6 +1,10 @@
 ---
 # vars file for ansible-role-sjk/
 
-__sjk_binary_name: "sjk-{{ sjk_version | lower }}.jar"
+__sjk_binary_name: "sjk{% if sjk_use_sjkplus is defined and sjk_use_sjkplus == true %}-plus{% endif %}-{{ sjk_version | lower }}.jar"
 
-__sjk_download_url: "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=org.gridkit.jvmtool&a=sjk{% if sjk_use_sjkplus is defined and sjk_use_sjkplus== true %}-plus{% endif %}&v={{ sjk_version }}"
+# default maven repository for downloading sjk artifact
+__sjk_group_id: "org.gridkit.jvmtool"
+__sjk_artifact_id: "sjk{% if sjk_use_sjkplus is defined and sjk_use_sjkplus == true %}-plus{% endif %}"
+
+__sjk_maven_artifact_timeout: 60
