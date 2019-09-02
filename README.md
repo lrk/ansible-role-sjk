@@ -22,10 +22,10 @@ Available variables along with default values are listed below (see `defaults/ma
 ```yml
   ---
     # SJK binary version.
-    # LATEST or specific version number.
-    # Default value: LATEST
+    # latest or specific version number.
+    # Default value: latest
     # See https://mvnrepository.com/artifact/org.gridkit.jvmtool/sjk for available versions
-    sjk_version: LATEST
+    sjk_version: latest
 
     # true: use the full sjk binary (with mxdump)
     # false: use lighter sjk binary (without mxdump)
@@ -33,7 +33,7 @@ Available variables along with default values are listed below (see `defaults/ma
     sjk_use_sjkplus: false
 
     # SJK Binary destination path
-    sjk_dest: '/opt/sjk/sjk-{{ sjk_version | lower }}'
+    sjk_dest: '/opt/sjk/sjk{% if sjk_use_sjkplus is defined and sjk_use_sjkplus== true %}-plus{% endif %}-{{ sjk_version | lower }}'
 
     # Configure SJK binary owner
     # Default value: empty
@@ -46,6 +46,18 @@ Available variables along with default values are listed below (see `defaults/ma
     # Configure CHMOD for SJK binary
     # Default value: u=r,g=r,o=r
     sjk_chmod: "u=r,g=r,o=r"
+   
+    # The repository from which sjk is downloaded (optional)
+    # Default: https://repo1.maven.org/maven2
+    sjk_repo_url: null
+
+    # The repository username for authentication
+    # Default: None
+    sjk_repo_username: null
+
+    # The repository password for authentication
+    # Default: None
+    sjk_repo_password: null
 
 ```
 
