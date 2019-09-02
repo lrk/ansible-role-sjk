@@ -1,4 +1,6 @@
 ---
+sudo: required
+
 # Based on :
 # https://www.jeffgeerling.com/blog/testing-ansible-roles-travis-ci-github
 # https://www.jeffgeerling.com/blog/2016/how-i-test-ansible-configuration-on-7-different-oses-docker
