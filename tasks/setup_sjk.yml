@@ -33,3 +33,10 @@
     owner: "{{ sjk_owner }}"
     group: "{{ sjk_group }}"
     mode: "{{ sjk_chmod }}"
+
+- name: "Ensure system required packages are installed"
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "python-lxml"
