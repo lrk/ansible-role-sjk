@@ -4,6 +4,7 @@ Ansible Role: Swiss Java Knife (SJK) ([lrk.ansible-role-sjk](https://galaxy.ansi
 [![Galaxy](https://img.shields.io/badge/galaxy-lrk.ansible--role--sjk-blue.svg)](https://galaxy.ansible.com/lrk/ansible-role-sjk)
 ![Ansible](https://img.shields.io/ansible/role/d/27795.svg)
 ![Ansible](https://img.shields.io/badge/dynamic/json.svg?label=min_ansible_version&url=https%3A%2F%2Fgalaxy.ansible.com%2Fapi%2Fv1%2Froles%2F27795%2F&query=$.min_ansible_version)
+![Ansible](https://img.shields.io/ansible/quality/27795)
 
 An Ansible Role that install [Swiss Java Knife (SJK)](https://github.com/aragozin/jvm-tools).
 
