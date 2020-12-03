@@ -31,7 +31,7 @@
     username: "{{ sjk_repo_username | default(omit) }}"
     password: "{{ sjk_repo_password | default(omit) }}"
     timeout: "{{ __sjk_maven_artifact_timeout }}"
-    dest: "{{ sjk_dest }}"
+    dest: "{{ sjk_dest }}/{{ __sjk_binary_name }}"
   when: not sjk_binary_stat.stat.exists
 
 - name: "Ensure SJK binary ownership"
